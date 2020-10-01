@@ -70,9 +70,9 @@ try {
             }
         }
     endforeach;
-    echo "Berhasil";
+    echo "Berhasil!";
 } catch (\Exception $e) {
-    echo 'Something went wrong: ' . $e->getMessage() . "\n";
+    echo 'Something went wrong, please input are correctly: ' . $e->getMessage() . "\n";
     $response = $e->getResponse();
 
     if ($e instanceof ChallengeRequiredException
@@ -99,7 +99,7 @@ try {
     try {
 
         if ($customResponse['status'] === 'ok' && $customResponse['action'] === 'close') {
-            echo 'Checkpoint bypassed';
+            echo 'Checkpoint di bypass';
             exit();
         }
 
@@ -116,8 +116,8 @@ try {
             ->getDecodedResponse();
         var_dump($customResponse);
         if ($customResponse['status'] === 'ok') {
-            echo "Finished, logged in successfully! Run this file again to validate that it works.\n";
-            echo 'Harap mengaktifkan koneksi ke database agar tidak terkena checkpoint. Coba lagi';
+            echo "Finished, you logged in successfully! Run this file again to validate that it works.\n";
+            echo 'Harap mengaktifkan koneksi ke dalam database agar tidak terkena checkpoint. Silahkan coba lagi';
         } else {
             echo "Probably finished...\n";
             var_dump($customResponse);
